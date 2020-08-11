@@ -1,9 +1,26 @@
-<h1> Create a new task</h1>
-<%= form_for @tasks do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.check_box :completed %>
-  <%= f.submit %>
-<% end %>
+
+
+<div class="container pt-5 ">
+  <div class="card ">
+  <h1 class="text-center mb-5 display-2 "> Create a new task</h1>
+  <div class="d-flex align-items-right">
+    <div class="col-12 col-md-6 col-lg-4">
+      <%= form_for @tasks do |f| %>
+       <ol> <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        </ol>
+        <ol>
+        <%= f.label :details %>
+        <%= f.text_field :details %>
+        <%= f.check_box :completed %>
+
+        </ol>
+        <div class="center" =>
+          <button class="btn btn-light"><%= f.submit %></button>
+        <% end %>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>

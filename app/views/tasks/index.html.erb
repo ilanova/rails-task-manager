@@ -1,22 +1,29 @@
-<h1> My tasks</h1>
-<% @tasks.each do |task|%>
-<!--   <li><%= link_to task.title, task_path(task) %></li> -->
- <% if task.completed == true  %>
-    <li> ✅ <%= link_to task.title, task_path(task) %>
-    <span><%= link_to "🗑", task_path(task), method: :delete, data: { confirm: "Do you completely finish this task?" } %></span>
-  </li>
-  <% else  %>
-    <li> ✖️ <%=  link_to task.title, task_path(task) %> 🗑
-    <p><%= link_to task_path(task), method: :delete, data: { confirm: "Do you completely finish this task?" } do %>
-      🗑
-      <% end %>
-    </p>
 
-    </li>
-  <% end  %>
-<!-- <li> <%= task.details %></li> -->
- <!--  <li><% link_to task.title, task_path(task) %></li> -->
-<% end %>
+<div class="container pt-5 ">
+  <div class="card ">
+    <h1 class="text-center mb-5 display-2 "> My tasks</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <% @tasks.each do |task|%>
+        <!--   <li><%= link_to task.title, task_path(task) %></li> -->
+         <% if task.completed == true  %>
+            <li class="list-group-item-action"> ✅ <%= link_to task.title, task_path(task) %>
+            <span><%= link_to "🗑", task_path(task), method: :delete, data: { confirm: "Do you completely finish this task?" } %></span>
+          </li>
+          <% else  %>
+            <li class="list-group-item-action"> ✖️ <%=  link_to task.title, task_path(task) %> 🗑
+            <p><%= link_to task_path(task), method: :delete, data: { confirm: "Do you completely finish this task?" } do %>
+              🗑
+              <% end %>
+            </p>
 
-  <p><%= link_to "Create a new task", tasks_new_path %></p>
-
+            </li>
+          <% end  %>
+      <!-- <li> <%= task.details %></li> -->
+       <!--  <li><% link_to task.title, task_path(task) %></li> -->
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-light"> <%= link_to "Create a new task", tasks_new_path %></button>
+    </div>
+  </div>
+</div>
